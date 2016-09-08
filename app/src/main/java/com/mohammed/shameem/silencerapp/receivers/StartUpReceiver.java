@@ -35,8 +35,7 @@ public class StartUpReceiver extends BroadcastReceiver {
             String ssid = wifiInfo.getSSID();
             Log.e(getClass().getSimpleName(),"Connected to the Wifi "+ssid+" in Office");
             Log.e(getClass().getSimpleName(),ssid);
-
-            if (ssid.equalsIgnoreCase(quotes+"xminds-dev"+quotes)){
+            if (ssid.equalsIgnoreCase(quotes+"xminds-dev"+quotes)&&info.isConnected()){
                 Log.e(getClass().getSimpleName(),"Inside the if connected statement");
                 context.startService(new Intent(context, WifiFinderService.class));
             }
