@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         finish();
         Log.e("MainActivity", "OnCreate");
-        MainActivity.this.startService(new Intent(this, WifiFinderService.class));
+       /* MainActivity.this.startService(new Intent(MainActivity.this, WifiFinderService.class));*/
 
 
     }

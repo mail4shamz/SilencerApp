@@ -5,6 +5,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -18,15 +20,18 @@
             android:exported="true" />
 
         <receiver
-            android:name=".receivers.StartUpReceiver"
+            android:name="com.mohammed.shameem.silencerapp.receivers.StartUpReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
+            <intent-filter android:priority="100">
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
         </receiver>
 
-        <activity android:name=".views.MainActivity">
+        <activity android:name="com.mohammed.shameem.silencerapp.views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -34,7 +39,7 @@
         </activity>
 
         <service
-            android:name=".services.WifiFinderService"
+            android:name="com.mohammed.shameem.silencerapp.services.WifiFinderService"
             android:enabled="true"
             android:exported="true" />
     </application>
