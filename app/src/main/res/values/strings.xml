@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SilencerApp</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="office_ssid">xminds-dev</string>
 </resources>

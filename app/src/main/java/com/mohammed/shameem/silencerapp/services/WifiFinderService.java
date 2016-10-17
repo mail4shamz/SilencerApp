@@ -21,12 +21,11 @@ public class WifiFinderService extends Service {
         Log.e("OnStart Called", "OSC Called");
         audiotape = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         new Thread(new Runnable() {
-
             public void run() {
                 try {
                     for (int i = 0; i <= 2; i++) {
-                        Thread.sleep(50);
                         audiotape.setRingerMode(AudioManager.RINGER_MODE_SILENT);
+                        Thread.sleep(0);
                     }
 
                 } catch (InterruptedException e) {
